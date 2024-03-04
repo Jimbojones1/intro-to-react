@@ -2,14 +2,16 @@
 // to be rendered by another component
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
 // ALL components must capitalized!
-export default function ToDoList() {
+export default function ToDoList(props) {
   // The point of our components
   // is to return some UI (what the user sees on the screen)
+
+  const todosLi = props.toDoList.map((item, idx) => {
+	return (<ToDoListItem key={idx} todo={item} />)
+  })
   return (
     <ul>
-		<ToDoListItem />
-		<ToDoListItem />
-		<ToDoListItem />
+		{todosLi}
     </ul>
   );
 }

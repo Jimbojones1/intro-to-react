@@ -6,12 +6,16 @@ import './App.css'
 import ToDoList from './ToDoList/ToDoList'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const list = ['play guitar', 'practice spanish', 'clean room', 'wash dises', 'walk the dog', 'call dad']
+  const listTwo = ['play mandolin', 'clean dishes', 'call mom']
 
   return (
     <div className='App'>
-      <h1>React To-Do</h1>
-      <ToDoList />
+      <h1>Todo list 1</h1>
+      <ToDoList toDoList={list} />
+      <h1>Todo List 2</h1>
+      <ToDoList toDoList={listTwo}/>
     </div>
   )
 }
