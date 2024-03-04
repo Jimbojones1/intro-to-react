@@ -1,7 +1,7 @@
 // Defining and exporting a component from this file
 // to be rendered by another component
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
-import './ToDoListItem.css'
+
 // ALL components must capitalized!
 export default function ToDoList({toDoList}) {
   // The point of our components
