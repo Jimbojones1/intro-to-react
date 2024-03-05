@@ -11,7 +11,11 @@ export default function ToDoListItem({todo, index}){
 		backgroundColor: index % 2 ? 'lavender' : 'plum'
 	}
 	return (
-		<li className={'ToDoListItem'}
-		style={styles}>{todo}</li>
+		<li 
+			className={'ToDoListItem'}
+			style={styles}>
+			<div className='flex-ctr-ctr'>{index +1 }</div>
+			{todo}
+		</li>
 	)
 }
