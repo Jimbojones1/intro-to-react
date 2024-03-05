@@ -1,23 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 // import the ToDoList component
-import ToDoList from './ToDoList/ToDoList'
-import SayHello from './SayHello/SayHello'
+import ToDoList from "./ToDoList/ToDoList";
+import SayHello from "./SayHello/SayHello";
 
 function App() {
-  
-  const list = ['play guitar', 'practice spanish', 'clean room', 'wash dises', 'walk the dog', 'call dad']
+  // Show or hide our todoList
+
+  const [backgroundColor, setBackgroundColor] = useState(false)
+
+  const [showTodos, setShowTodos] = useState(false);
+  const [todos, setTodos] = useState([
+    "play guitar",
+    "practice spanish"
+  ]);
+
+
+
+
+  function handeClick() {
+    console.log("handle click is being called!");
+
+    setShowTodos(!showTodos); // flipping whatever the current
+    // value of the showTodos state is
+  }
+
+  function handleChangeBgColor(){
+    setBackgroundColor(!backgroundColor) 
+  }
 
   return (
-    <div className='App'>
+    <div className="App" style={{backgroundColor: backgroundColor ? 'red' : 'yellow'}}>
+      <button onClick={handleChangeBgColor}>Change Background Color</button>
+
+
       <h1>Todo list 1</h1>
-      <SayHello username={'kate'}/>
-      <ToDoList toDoList={list} />
-    
+      <button onClick={handeClick}>
+        {showTodos ? "hide todos" : "show todos"}
+      </button>
+      {showTodos ? <ToDoList toDoList={todos} /> : null}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
