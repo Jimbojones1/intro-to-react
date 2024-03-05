@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 // import the ToDoList component
 import ToDoList from './ToDoList/ToDoList'
+import SayHello from './SayHello/SayHello'
 
 function App() {
   
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className='App'>
       <h1>Todo list 1</h1>
+      <SayHello username={'kate'}/>
       <ToDoList toDoList={list} />
     
     </div>
