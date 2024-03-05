@@ -8,7 +8,7 @@ export default function ToDoList({toDoList}) {
   // is to return some UI (what the user sees on the screen)
 
   const todosLi = toDoList.map((item, idx) => {
-	return (<ToDoListItem key={idx} todo={item} name={"jim"} age={18} />)
+	return (<ToDoListItem key={idx} todo={item}  />)
   })
   return (
     <ul>
