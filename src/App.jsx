@@ -19,8 +19,11 @@ function App() {
 
   // This function is being passed as a prop to NewToDoFOrm, 
   // in order to lift the state from the form to the App component 
-  function handleAddTodo(){
+  function handleAddTodo(todoInput){
+    console.log(todoInput, ' <--- todoInput in App.jsx')
 
+    // update the state to show(render) the newTodo
+    setTodos([todoInput, ...todos])
   }
 
 
@@ -41,7 +44,7 @@ function App() {
 
 
       <h1>Todo list 1</h1>
-      <NewToDoForm />
+      <NewToDoForm handleAddTodo={handleAddTodo}/>
       <button onClick={handeClick}>
         {showTodos ? "hide todos" : "show todos"}
       </button>
