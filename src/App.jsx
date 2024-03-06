@@ -5,7 +5,7 @@ import "./App.css";
 // import the ToDoList component
 import ToDoList from "./ToDoList/ToDoList";
 import SayHello from "./SayHello/SayHello";
-
+import NewToDoForm from "./NewToDoForm/NewToDoForm";
 function App() {
   // Show or hide our todoList
 
@@ -17,7 +17,11 @@ function App() {
     "practice spanish"
   ]);
 
+  // This function is being passed as a prop to NewToDoFOrm, 
+  // in order to lift the state from the form to the App component 
+  function handleAddTodo(){
 
+  }
 
 
   function handeClick() {
@@ -37,6 +41,7 @@ function App() {
 
 
       <h1>Todo list 1</h1>
+      <NewToDoForm />
       <button onClick={handeClick}>
         {showTodos ? "hide todos" : "show todos"}
       </button>
